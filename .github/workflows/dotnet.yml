@@ -1,0 +1,24 @@
+name: Build .NET Framework 4.7.2
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore CyberSecurity_ChatBot_PROG6221_POE.sln
+
+      - name: Build solution
+        run: msbuild CyberSecurity_ChatBot_PROG6221_POE.sln /p:Configuration=Release
