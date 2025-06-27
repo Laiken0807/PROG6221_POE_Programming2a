@@ -125,7 +125,7 @@ namespace CyberSecurity_ChatBot_PROG6221_POE.Pages
             QuizListBox.Items.Add(new ListBoxItem
             {
                 Content = $"📘 Explanation: {question.Explanation}",
-                Foreground = System.Windows.Media.Brushes.LightGray
+                Foreground = System.Windows.Media.Brushes.Navy
             });
 
             currentQuestionIndex++;
